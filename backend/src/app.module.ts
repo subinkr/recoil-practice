@@ -18,6 +18,9 @@ import { BoardsService } from './boards/boards.service';
       database: 'postgres',
       entities: [BoardModel, UserModel],
       synchronize: true,
+      ssl: {
+        rejectUnauthorized: false,
+      },
     }),
     TypeOrmModule.forFeature([BoardModel]),
     UsersModule,
